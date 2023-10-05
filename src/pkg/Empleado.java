@@ -19,6 +19,10 @@ public class Empleado {
 			primas=100;
 		}
 		
+		if (horasExtra < 0) {
+	        horasExtra = 0;
+	    }
+		
 		extras=horasExtra*30;
 		
 		return salarioBase + primas + extras;
@@ -26,6 +30,11 @@ public class Empleado {
 	}
 	
 	public float calculoNominaNeta(float nominaBruta) {
+		
+		if (nominaBruta < 0) {
+	        return 0;
+	    }
+
 		
 		float retencion=0;
 		if(nominaBruta>2500) {
